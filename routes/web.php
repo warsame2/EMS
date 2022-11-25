@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\CurdController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('welcome',CurdController::class);
+
+
+
+
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
+
+
+
+Route::get('/forgot', function () {
+    return view('forgot');
+});
+

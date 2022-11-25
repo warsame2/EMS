@@ -65,17 +65,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
 @endsection
 
 

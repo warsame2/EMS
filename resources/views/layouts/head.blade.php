@@ -1,5 +1,5 @@
 
-<title>soengsouy.com</title>
+<title>@yield('title')</title>
 <!-- Favicon icon -->
 <link rel="icon" href="{{ URL::to('files\assets\images\favicon.ico') }}" type="image/x-icon">
 <!-- Google font-->
@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="{{ URL::to('files\assets\css\style.css') }}" >
 <link rel="stylesheet" type="text/css" href="{{ URL::to('files\assets\css\jquery.mCustomScrollbar.css') }}">
 
-
+@yield('css')
 
 
 
