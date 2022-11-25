@@ -56,7 +56,20 @@
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
                     
-                        <form class="md-float-material form-material">
+                        <form  action="{{route('login-users')}}" method="post"  class="md-float-material form-material">
+
+                            @if(Session::has('success'))
+                            <div class="alert alert-success">{{Session::get('success')}}</div>
+                            @endif
+
+
+                            @if(Session::has('fail'))
+                            <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                            @endif
+
+
+
+
                             <div class="text-center">
                                 <img src="..\files\assets\images\logo.png" alt="logo.png">
                             </div>
@@ -67,14 +80,24 @@
                                             <h3 class="text-center">Sign In</h3>
                                         </div>
                                     </div>
+
+
+                                    @csrf
                                     <div class="form-group form-primary">
-                                        <input type="text" name="email" class="form-control" required="" placeholder="Your Email Address">
+                                        <input type="text" name="email" class="form-control" required="" placeholder="Your Email Address" value="{{old('email')}}">
+                                        <span class="text-danger">@error('email') {{$message}} @enderror </span>
                                         <span class="form-bar"></span>
                                     </div>
+
                                     <div class="form-group form-primary">
                                         <input type="password" name="password" class="form-control" required="" placeholder="Password">
+
+                                        <span class="text-danger">@error('password') {{$message}} @enderror
+                                        </span>
+                                        
                                         <span class="form-bar"></span>
                                     </div>
+
                                     <div class="row m-t-25 text-left">
                                         <div class="col-12">
                                             <div class="checkbox-fade fade-in-primary d-">

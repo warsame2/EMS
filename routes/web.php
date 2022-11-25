@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\CurdController;
+use \App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,16 +18,9 @@ Route::resource('welcome',CurdController::class);
 
 
 
+Route::get('/login', [AuthController::class , 'login']);
+
+Route::get('/registration', [AuthController::class, 'registration']);
 
 
-
-Route::get('/', function () {
-    return view('login');
-});
-
-
-
-Route::get('/forgot', function () {
-    return view('forgot');
-});
 
