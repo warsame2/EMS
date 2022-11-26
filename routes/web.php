@@ -14,13 +14,13 @@ use \App\Http\Controllers\AuthController;
 |
 */
 
-Route::resource('welcome',CurdController::class);
+Route::resource('/',CurdController::class);
 
 
 
-Route::get('/login', [AuthController::class , 'login']);
+//Route::get('/login', [AuthController::class , 'login']);
 
-Route::get('/registration', [AuthController::class, 'registration']);
+//Route::get('/registration', [AuthController::class, 'registration']);
 
 
 
