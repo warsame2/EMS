@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
-
+@section('active')
+active
+@endsection
 
 @section('contant')
       <!-- statustic-card start -->

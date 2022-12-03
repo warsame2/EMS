@@ -7,11 +7,21 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     
+public function users(){
 
+
+return view('users');
+
+
+}
   
 
 
+public function dashbord(){
 
+return view('welcome');
+
+}
 
 
 

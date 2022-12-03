@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\CurdController;
 use \App\Http\Controllers\AuthController;
+use \App\Http\Controllers\PagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +25,6 @@ Route::resource('/',CurdController::class);
 
 
 
+Route::get('users' , [PagesController::class , 'users']  ) ;
+
+Route::get('welcom' , [PagesController::class , 'dashbord']  );

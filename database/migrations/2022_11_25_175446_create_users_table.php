@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone') -> unique();
             $table->string('password',13);
             $table->string('status',10);
-           // $table->longblob('photo');
+            $table->binary('photo');
             $table->date('dor');
             $table->timestamps();
         });
