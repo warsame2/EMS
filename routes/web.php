@@ -15,7 +15,7 @@ use \App\Http\Controllers\PagesController;
 |
 */
 
-Route::resource('/',CurdController::class);
+//Route::resource('/',CurdController::class);
 
 
 
@@ -25,6 +25,16 @@ Route::resource('/',CurdController::class);
 
 
 
-Route::get('users' , [PagesController::class , 'users']  ) ;
+Route::get('users' , [PagesController::class , 'users']  )-> middleware('islogin'); 
 
-Route::get('welcom' , [PagesController::class , 'dashbord']  );
+Route::get('profile' , [PagesController::class , 'profile']  )-> middleware('islogin'); 
+
+Route::POST('users/insert' , [PagesController::class , 'insert']) -> name('user.insert');
+
+
+Route::get('/',[AuthController::class , 'login'])->middleware('alreadylogin');
+Route::post('/login-users' , [AuthController::class , 'loginUser']) -> name('login-users');
+
+Route::get('welcom' , [PagesController::class , 'dashbord']  )-> middleware('islogin');
+
+Route::get('/logout',[AuthController::class , 'logout']);

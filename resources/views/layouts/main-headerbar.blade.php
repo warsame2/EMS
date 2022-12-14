@@ -89,7 +89,7 @@
                             <div class="dropdown-primary dropdown">
                                 <div class="dropdown-toggle" data-toggle="dropdown">
                                     <img src="..\files\assets\images\avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                    <span>Soeng Souy</span>
+                                    <span>@yield('username')</span>
                                     <i class="feather icon-chevron-down"></i>
                                 </div>
                                 <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
@@ -99,7 +99,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="user-profile.htm">
+                                        <a href="/profile">
                                             <i class="feather icon-user"></i> Profile
                                         </a>
                                     </li>
@@ -109,12 +109,12 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="auth-lock-screen.htm">
+                                        <a href="lockscreen">
                                             <i class="feather icon-lock"></i> Lock Screen
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="auth-normal-sign-in.htm">
+                                        <a href="/logout">
                                             <i class="feather icon-log-out"></i> Logout
                                         </a>
                                     </li>

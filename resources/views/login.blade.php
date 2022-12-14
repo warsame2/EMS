@@ -58,15 +58,7 @@
                     
                         <form  action="{{route('login-users')}}" method="post"  class="md-float-material form-material">
 
-                            @if(Session::has('success'))
-                            <div class="alert alert-success">{{Session::get('success')}}</div>
-                            @endif
-
-
-                            @if(Session::has('fail'))
-                            <div class="alert alert-danger">{{Session::get('fail')}}</div>
-                            @endif
-
+                           
 
 
 
@@ -84,13 +76,13 @@
 
                                     @csrf
                                     <div class="form-group form-primary">
-                                        <input type="text" name="email" class="form-control" required="" placeholder="Your Email Address" value="{{old('email')}}">
-                                        <span class="text-danger">@error('email') {{$message}} @enderror </span>
+                                        <input type="text" name="username" class="form-control"  placeholder="Your username" value="{{old('email')}}">
+                                        <span class="text-danger">@error('username') {{$message}} @enderror </span>
                                         <span class="form-bar"></span>
                                     </div>
 
                                     <div class="form-group form-primary">
-                                        <input type="password" name="password" class="form-control" required="" placeholder="Password">
+                                        <input type="password" name="password" class="form-control"  placeholder="Password">
 
                                         <span class="text-danger">@error('password') {{$message}} @enderror
                                         </span>
@@ -114,12 +106,21 @@
                                     </div>
                                     <div class="row m-t-30">
                                         <div class="col-md-12">
-                                            <button type="button" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Sign in</button>
+                                            <button   type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Sign in</button>
                                         </div>
                                     </div>
                                     <hr>
                                   
                                 </div>
+                                @if(Session::has('success'))
+                                <div class="alert alert-success">{{Session::get('success')}}</div>
+                                @endif
+    
+    
+                                @if(Session::has('fail'))
+                                <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                                @endif
+    
                             </div>
                         </form>
                         <!-- end of form -->

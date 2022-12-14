@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id('userid');
             $table->string('username',23);
             $table->string('phone') -> unique();
-            $table->string('password',13);
+            $table->string('password');
             $table->string('status',10);
             $table->binary('photo');
             $table->date('dor');

@@ -4,6 +4,12 @@
 active
 @endsection
 
+
+@section('username')
+    {{$data->username}}
+@endsection
+
+
 @section('contant')
       <!-- statustic-card start -->
       <div class="col-xl-3 col-md-6">

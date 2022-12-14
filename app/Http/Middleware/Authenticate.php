@@ -4,6 +4,9 @@ namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
+use Closure;
+use Illuminate\Http\Request;
+
 class Authenticate extends Middleware
 {
     /**
@@ -12,10 +15,21 @@ class Authenticate extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string|null
      */
-    protected function redirectTo($request)
+    protected function redirectTo(Request $request, Closure $next)
     {
-        if (! $request->expectsJson()) {
-            return route('login');
-        }
+        
+
+
+        if(Session()->has('loginid') && (url('/')==$request -> url())){
+                return back();
+
+
+
+                }
+                 
+
+                return $next($request);
+
+        
     }
 }

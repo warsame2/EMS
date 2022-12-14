@@ -87,14 +87,7 @@
                                 <div class="page-body">
                                     <div class="row">
 
-
-
-              
-
                                        @yield('contant')
-
-              
-            
 
                                      </div>
                                 </div>
